@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1B6CCEE2-FB83-4E82-9D6C-9F83738C8DE9}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>TestApp_SlotAutomate</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)glew-1.12.0\include;$(ProjectDir)glfw-3.1.1.bin.WIN32\include;$(ProjectDir)glm-0.9.6.3\glm;$(ProjectDir)soil\Simple OpenGL Image Library\src;$(ProjectDir)freetype-2.3.5-1-bin\include;$(ProjectDir)freetype-2.3.5-1-bin\include\freetype2;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)glew-1.12.0\lib\Release\Win32;$(ProjectDir)glfw-3.1.1.bin.WIN32\lib-vc2013;$(ProjectDir)soil\Simple OpenGL Image Library\lib;$(ProjectDir)freetype-2.3.5-1-bin\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir)glew-1.12.0\include;$(ProjectDir)glfw-3.1.1.bin.WIN32\include;$(ProjectDir)glm-0.9.6.3\glm;$(ProjectDir)soil\Simple OpenGL Image Library\src;$(ProjectDir)freetype-2.3.5-1-bin\include;$(ProjectDir)freetype-2.3.5-1-bin\include\freetype2;$(IncludePath)include;$(IncludePath)atlmfc\include</IncludePath>
+    <LibraryPath>$(ProjectDir)glew-1.12.0\lib\Release\Win32;$(ProjectDir)glfw-3.1.1.bin.WIN32\lib-vc2013;$(ProjectDir)soil\Simple OpenGL Image Library\lib;$(ProjectDir)freetype-2.3.5-1-bin\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32s.lib;SOILd.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32s.lib;SOIL.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="ButtonOnPanel.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="Line.h" />
+    <ClInclude Include="ofxTransitions.h" />
+    <ClInclude Include="ofxTweener.h" />
+    <ClInclude Include="resource_manager.h" />
+    <ClInclude Include="rotating_drum.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="sprite_renderer.h" />
+    <ClInclude Include="texture.h" />
+    <ClInclude Include="text_renderer.h" />
+    <ClInclude Include="Timestamp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ButtonOnPanel.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Line.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ofxTransitions.cpp" />
+    <ClCompile Include="ofxTweener.cpp" />
+    <ClCompile Include="resource_manager.cpp" />
+    <ClCompile Include="rotating_drum.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="sprite_renderer.cpp" />
+    <ClCompile Include="texture.cpp" />
+    <ClCompile Include="text_renderer.cpp" />
+    <ClCompile Include="Timestamp.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
